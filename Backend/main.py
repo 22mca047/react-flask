@@ -10,7 +10,7 @@ from flask_cors import CORS
 import os
 
 def create_app(config):
-    app = Flask(__name__, static_folder="../client/build", template_folder="../client/build")
+    app = Flask(__name__, static_folder="../client/public", template_folder="../client/public")
     app.config.from_object(config)
     CORS(app)
     db.init_app(app)
