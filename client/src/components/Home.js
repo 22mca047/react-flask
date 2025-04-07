@@ -36,17 +36,16 @@ const LoggedIn = () => {
     }
 
     const showModel = (id) => {
-        setshow(true)
-        setRecipeId(id)
-        recipes.map(
-            (recipe) => {
-                if (recipe.id === id) {
-                    setValue('title', recipe.title)
-                    setValue('description', recipe.description)
-                }
+        setshow(true);
+        setRecipeId(id);
+        recipes.forEach((recipe) => {
+            if (recipe.id === id) {
+                setValue('title', recipe.title);
+                setValue('description', recipe.description);
             }
-        )
-    }
+        });
+    };
+    
 
     const updateData = (data) => {
         console.log(data)
