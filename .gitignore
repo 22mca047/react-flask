@@ -6,7 +6,6 @@ __pycache__/
 .env
 venv/
 Backend/venv/
-Backend/dev.db
 Backend/__pycache__
 
 # Flask
