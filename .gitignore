@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+Backend/venv/
+
+# Flask
+instance/
+*.sqlite
+
+# Node.js
+client/node_modules/
+client/.env
+client/build/
+
+# VSCode or JetBrains
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
