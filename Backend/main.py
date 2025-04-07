@@ -21,11 +21,9 @@ def create_app(config):
     api.add_namespace(auth_ns)
 
 
-    @app.route("/", defaults={"filename": ""})
+    @app.route("/", defaults={"filename": "index.html"})
     @app.route("/<path:filename>")
-    def serve_frontend(filename):
-        if not filename:
-            filename = "index.html"
+    def serve_react(filename):
         return send_from_directory(app.static_folder, filename)
 
     @app.shell_context_processor
