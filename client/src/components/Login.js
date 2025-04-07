@@ -24,7 +24,7 @@ const LoginPage = () => {
         .then(data => {
             console.log(data.access_token)
             login(data.access_token)
-            navigate('/');
+            navigate('/home');
         })
         .catch(error => console.error('Error:', error))
 

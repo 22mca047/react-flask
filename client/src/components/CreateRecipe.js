@@ -11,7 +11,7 @@ const CreateRacipePage = () => {
         () => {
             const token = localStorage.getItem("REACT_TOKEN_AUTH_KEY")
             if (!token) {
-                nevigate('/')
+                nevigate('/home')
             }
         }
     )
@@ -36,6 +36,7 @@ const CreateRacipePage = () => {
         .then(response => response.json())
         .then(data => {
             console.log(data);
+            nevigate('/home')
         })
         .catch(error => console.error('Error:', error))
         reset()

@@ -6,7 +6,7 @@ const LoggedInLinks = ({ handleLogout }) => {
     return (
         <>
             <li className="nav-item">
-                <Link className="nav-link active" to="/">Home</Link>
+                <Link className="nav-link active" to="/home">Home</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link active" to="/create_recipe">Create Recipes</Link>
@@ -24,7 +24,7 @@ const LoggedOutLinks = () => {
     return (
         <>
             <li className="nav-item">
-                <Link className="nav-link active" to="/">Home</Link>
+                <Link className="nav-link active" to="/home">Home</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link active" to="/signup">Sign Up</Link>
@@ -42,13 +42,13 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logout(); 
-        navigate('/');
+        navigate('/home');
     };
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">Recipes</Link>
+                <Link className="navbar-brand" to="/home">Recipes</Link>
                 <button
                     className="navbar-toggler"
                     type="button"
