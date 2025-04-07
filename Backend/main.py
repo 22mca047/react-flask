@@ -21,10 +21,14 @@ def create_app(config):
     api.add_namespace(auth_ns)
 
 
-    @app.route("/", defaults={"filename": "index.html"})
-    @app.route("/<path:filename>")
-    def serve_react(filename):
-        return send_from_directory(app.static_folder, filename)
+    @app.route('/', defaults={'path': ''})
+    @app.route('/<path:path>')
+    def serve_react_app(path):
+        if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+            return send_from_directory(app.static_folder, path)
+        else:
+            return send_from_directory(app.static_folder, 'index.html')
+
 
     @app.shell_context_processor
     def make_shell_context():
